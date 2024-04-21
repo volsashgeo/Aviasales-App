@@ -1,0 +1,75 @@
+.ticket {
+  height: 184px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 520px) {
+  .ticket {
+    height: auto;
+    margin: 0 10px;
+  }
+}
+
+.ticket__price {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  //   margin-bottom: 20px;
+  align-items: center;
+}
+
+.ticket__price p {
+  font-size: 24px;
+  color: rgba(33, 150, 243, 1);
+  line-height: 24px;
+}
+
+.ticket__flightTo,
+.ticket__flightFrom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 520px) {
+  .ticket__flightTo,
+  .ticket__flightFrom {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+}
+
+.ticket__flightTo {
+  margin-bottom: 10px;
+}
+
+.ticket-item {
+  min-width: 141px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //   border: 1px solid black;
+}
+
+@media (max-width: 520px) {
+  .ticket-item {
+    margin-bottom: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
+
+.ticket__direction,
+.ticket__label,
+.ticket__transfer-quantity {
+  color: rgba(160, 176, 185, 1);
+}

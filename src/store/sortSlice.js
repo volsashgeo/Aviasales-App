@@ -6,16 +6,13 @@ const sortSlice = createSlice({
     sort: [true, false, false],
   },
   reducers: {
-    cheapest(state, action) {
-      console.log('action', action);
+    cheapest(state) {
       state.sort = [true, false, false];
     },
-    fastest(state, action) {
-      console.log('action', action);
+    fastest(state) {
       state.sort = [false, true, false];
     },
-    optimal(state, action) {
-      console.log('action', action);
+    optimal(state) {
       state.sort = [false, false, true];
     },
   },

@@ -28,6 +28,11 @@
   text-align: center;
   line-height: 12px;
   background-color: #fff;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: rgba(241, 252, 255, 1);
 }
 
 .tab.active {

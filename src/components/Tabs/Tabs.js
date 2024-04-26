@@ -1,22 +1,23 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React  from 'react';
+import { useSelector,useDispatch} from 'react-redux';
 
-import { cheapest, fastest, optimal } from '../../store/sortSlice';
+import {cheapest,fastest,optimal} from "../../store/sortSlice"
 
 import classes from './Tabs.module.scss';
 
 export default function Tabs() {
-  const dispatch = useDispatch();
 
-  const active = useSelector((state) => state.sort.sort);
+  const dispatch = useDispatch()
+
+  const active = useSelector(state => state.sort.sort)
 
   // console.log('active',active);
 
-  const tabClasses = [[classes.tab], [classes.tab], [classes.tab]];
+  const tabClasses = [[classes.tab],[classes.tab],[classes.tab]];
 
-  for (let i = 0; i < active.length; i++) {
-    if (active[i]) {
-      tabClasses[i].push(classes.active);
+  for(let i = 0; i < active.length;i++) {
+    if(active[i]) {
+      tabClasses[i].push(classes.active)
     }
   }
 

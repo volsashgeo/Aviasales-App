@@ -11,8 +11,6 @@ export default function Tabs() {
 
   const active = useSelector(state => state.sort.sort)
 
-  // console.log('active',active);
-
   const tabClasses = [[classes.tab],[classes.tab],[classes.tab]];
 
   for(let i = 0; i < active.length;i++) {

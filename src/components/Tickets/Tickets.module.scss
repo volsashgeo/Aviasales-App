@@ -1,6 +1,41 @@
-
 @media (max-width: 520px) {
-    .tickets {
-        margin-top: 80px;
-    }
+  .tickets {
+    margin-top: 80px;
   }
+}
+
+.btn__next_tickets {
+  border: 1px solid rgba(223, 229, 236, 1);
+  border-radius: 10px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  background-color: rgba(33, 150, 243, 1);
+  cursor: pointer;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btn__next_tickets:hover {
+  background-color: rgba(241, 252, 255, 1);
+  color: black;
+}
+
+.no_tickets {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -135,6 +135,10 @@ html {
   font-size: 12px;
 }
 
+body {
+  background-color: rgba(243, 247, 250, 1);
+}
+
 .aviasales__logo {
   display: flex;
   margin-left: auto;
@@ -171,9 +175,19 @@ html {
 
 @media (max-width: 520px) {
   .main {
-    // max-height: 100%;
     margin: 0;
-
     justify-content: center;
   }
 }
+
+.spin {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 520px) {
+  .spin {
+    margin-top: 80px;
+    margin-bottom: 0;
+  }
+}
+

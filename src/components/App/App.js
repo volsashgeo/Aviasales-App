@@ -10,7 +10,6 @@ import aviasalesLogo from './Logo.svg';
 import classes from './App.module.scss';
 
 export default function App() {
-
   const error = useSelector((state) => state.tickets.error);
   const stop = useSelector((state) => state.tickets.stop);
 

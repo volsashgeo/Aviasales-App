@@ -80,7 +80,7 @@ export default function Tickets() {
     <div className={classes.tickets}>
       {elems}
       <button className={classes.btn__next_tickets} onClick={() => setAddFiveTickets((s) => s + 5)}>
-      Показать еще 5 билетов!
+        Показать еще 5 билетов!
       </button>
     </div>
   ) : (

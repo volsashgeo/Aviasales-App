@@ -2,10 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getTickets } from '../services/aviasales-service';
 
-export const fetchTickets = createAsyncThunk(
-  'tickets/fetchTickets',
-  async () => getTickets()
-);
+export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async () => getTickets());
 
 const ticketsSlice = createSlice({
   name: 'tickets',

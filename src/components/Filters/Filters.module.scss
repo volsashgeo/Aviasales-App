@@ -56,11 +56,10 @@
   height: 8px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
 }
 
 .aviasales__filter:checked + .aviasales__checkbox::before {
-    opacity: 1;
+  opacity: 1;
 }
-

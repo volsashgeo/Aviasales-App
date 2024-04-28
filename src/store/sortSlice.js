@@ -18,6 +18,6 @@ const sortSlice = createSlice({
   },
 });
 
-export const {cheapest,fastest,optimal} = sortSlice.actions
+export const { cheapest, fastest, optimal } = sortSlice.actions;
 
-export default sortSlice.reducer
+export default sortSlice.reducer;

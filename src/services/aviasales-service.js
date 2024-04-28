@@ -19,14 +19,13 @@ async function getTickets() {
     const response = await fetch(url);
 
     if (!response.ok) {
-
-      if(Number(response.status) !== 500) {
+      if (Number(response.status) !== 500) {
         throw new Error(`Could not fetch ${url}, received ${response.status}`);
       }
     }
 
     ticketsObj = await response.json();
-  } catch(e) {
+  } catch (e) {
     getTickets();
   }
   return ticketsObj;

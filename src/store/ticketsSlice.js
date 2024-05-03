@@ -9,26 +9,22 @@ const ticketsSlice = createSlice({
   initialState: {
     tickets: [],
     error: false,
-    loading: true,
     stop: null,
   },
 
   extraReducers: (builder) => {
     builder.addCase(fetchTickets.pending, (state) => {
-      state.loading = true;
       state.error = false;
     });
 
     builder.addCase(fetchTickets.fulfilled, (state, action) => {
-      state.loading = false;
-      state.stop = action?.payload?.stop;
-      if (action?.payload?.tickets) {
+      state.stop = action.payload?.stop;
+      if (action.payload?.tickets) {
         state.tickets = [...state.tickets, ...action.payload.tickets];
       }
     });
 
     builder.addCase(fetchTickets.rejected, (state) => {
-      state.loading = false;
       state.error = true;
     });
   },

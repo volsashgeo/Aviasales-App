@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import {appSelectors} from '../../store';
-import {addNotIncludedObjFromArrToTargetArr} from "../../utils"
+import { appSelectors } from '../../store';
+import { addNotIncludedObjFromArrToTargetArr } from '../../utils';
 import { fetchTickets } from '../../store/ticketsSlice';
 import Ticket from '../Ticket';
 
@@ -12,7 +12,7 @@ export default function Tickets() {
   const [addFiveTickets, setAddFiveTickets] = useState(5);
 
   const dispatch = useDispatch();
-  
+
   const stop = useSelector(appSelectors.stop);
   const tickets = useSelector(appSelectors.tickets);
   const filters = useSelector(appSelectors.filter);
@@ -22,7 +22,7 @@ export default function Tickets() {
     if (!stop) {
       dispatch(fetchTickets());
     }
-  }, [tickets, stop, dispatch]);
+  }, [stop, tickets, dispatch]);
 
   const filteredTicketsList = [];
 

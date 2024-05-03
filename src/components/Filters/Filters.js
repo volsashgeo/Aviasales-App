@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { appSelectors } from '../../store';
 import {
   allCheckboxesChecked,
   noTransferChecked,
@@ -14,7 +15,7 @@ import classes from './Filters.module.scss';
 export default function Filters() {
   const dispatch = useDispatch();
 
-  const item = useSelector((state) => state.filter.filter);
+  const item = useSelector(appSelectors.filter);
 
   return (
     <div className={classes.aviasales__filters}>

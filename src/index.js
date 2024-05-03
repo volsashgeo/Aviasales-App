@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Offline, Online } from 'react-detect-offline';
+import { Offline } from 'react-detect-offline';
 import { Alert } from 'antd';
 import { Provider } from 'react-redux';
 
@@ -12,9 +12,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Online>
-        <App />
-      </Online>
       <Offline>
         <Alert
           message="Возникла ошибка, попробуйте перезагрузить страницу"
@@ -25,6 +22,7 @@ root.render(
           className="alert-fontsize"
         />
       </Offline>
+      <App />
     </Provider>
   </React.StrictMode>
 );

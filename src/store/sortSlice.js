@@ -16,8 +16,10 @@ const sortSlice = createSlice({
       state.sort = [false, false, true];
     },
   },
+  selectors: {
+    tabs: (state) => state.sort.sort,
+  },
 });
 
 export const { cheapest, fastest, optimal } = sortSlice.actions;
-
 export default sortSlice.reducer;

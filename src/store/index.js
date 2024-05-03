@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import sortReducer from './sortSlice';
 import filterReducer from './filterSlice';
 import ticketsReducer from './ticketsSlice';
+import * as appSelectors from './selectors';
 
 export default configureStore({
   reducer: {
@@ -11,3 +12,5 @@ export default configureStore({
     tickets: ticketsReducer,
   },
 });
+
+export { appSelectors };

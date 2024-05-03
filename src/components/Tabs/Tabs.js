@@ -2,13 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { cheapest, fastest, optimal } from '../../store/sortSlice';
+import {appSelectors} from "../../store"
 
 import classes from './Tabs.module.scss';
 
 export default function Tabs() {
   const dispatch = useDispatch();
-
-  const active = useSelector((state) => state.sort.sort);
+  const active = useSelector(appSelectors.tabs);
 
   const tabClasses = [[classes.tab], [classes.tab], [classes.tab]];
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import {appSelectors} from '../../store';
+import {addNotIncludedObjFromArrToTargetArr} from "../../utils"
 import { fetchTickets } from '../../store/ticketsSlice';
 import Ticket from '../Ticket';
 
@@ -10,11 +12,11 @@ export default function Tickets() {
   const [addFiveTickets, setAddFiveTickets] = useState(5);
 
   const dispatch = useDispatch();
-  const stop = useSelector((state) => state.tickets.stop);
-
-  const tickets = useSelector((state) => state.tickets.tickets);
-  const filters = useSelector((state) => state.filter.filter);
-  const tabs = useSelector((state) => state.sort.sort);
+  
+  const stop = useSelector(appSelectors.stop);
+  const tickets = useSelector(appSelectors.tickets);
+  const filters = useSelector(appSelectors.filter);
+  const tabs = useSelector(appSelectors.tabs);
 
   useEffect(() => {
     if (!stop) {
@@ -23,22 +25,6 @@ export default function Tickets() {
   }, [tickets, stop, dispatch]);
 
   const filteredTicketsList = [];
-
-  function addNotIncludedObjFromArrToTargetArr(arr, targetArr) {
-    const stringifiedTargetArr = [];
-
-    for (let i = 0; i < targetArr.length; i++) {
-      stringifiedTargetArr[i] = JSON.stringify(targetArr[i]);
-    }
-
-    for (const item of arr) {
-      if (!stringifiedTargetArr.includes(JSON.stringify(item))) {
-        targetArr.push(item);
-      }
-    }
-
-    return targetArr;
-  }
 
   if (filters[1]) {
     const arr = tickets.filter((item) => item.segments[0].stops.length === 0 || item.segments[1].stops.length === 0);
@@ -70,6 +56,10 @@ export default function Tickets() {
 
   if (tabs[1]) {
     sortedAndFilteredTicketsList = filteredTicketsList.sort((a, b) => a.segments[0].duration - b.segments[0].duration);
+  }
+
+  if (tabs[2]) {
+    sortedAndFilteredTicketsList = filteredTicketsList;
   }
 
   const elems = sortedAndFilteredTicketsList

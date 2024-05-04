@@ -1,6 +1,6 @@
 let searchId = null;
 
-async function getSearchIdObj() {
+async function getSearchId() {
   const url = 'https://aviasales-test-api.kata.academy/search';
   const response = await fetch(url);
 
@@ -13,7 +13,7 @@ async function getTickets() {
   let ticketsObj = null;
   try {
     if (!searchId) {
-      searchId = await getSearchIdObj();
+      searchId = await getSearchId();
     }
     const url = `https://aviasales-test-api.kata.academy/tickets?searchId=${searchId}`;
     const response = await fetch(url);
@@ -31,4 +31,4 @@ async function getTickets() {
   return ticketsObj;
 }
 
-export { getSearchIdObj, getTickets };
+export { getSearchId, getTickets };

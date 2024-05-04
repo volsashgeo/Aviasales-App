@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { appSelectors } from '../../store';
@@ -18,13 +18,12 @@ export default function Tickets() {
   const filters = useSelector(appSelectors.filter);
   const tabs = useSelector(appSelectors.tabs);
 
-  const request = useCallback(() => dispatch(fetchTickets()), [dispatch]);
 
   useEffect(() => {
     if (!stop) {
-      request();
+      dispatch(fetchTickets())
     }
-  }, [stop, tickets, request]);
+  }, [stop, tickets, dispatch]);
 
   const filteredTicketsList = [];
 

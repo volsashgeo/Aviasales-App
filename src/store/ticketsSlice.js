@@ -2,14 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getTickets } from '../services/aviasales-service';
 
-export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async () => getTickets());
+export const fetchTickets = createAsyncThunk('tickets/fetchTickets', getTickets);
 
 const ticketsSlice = createSlice({
   name: 'tickets',
   initialState: {
     tickets: [],
     error: false,
-    stop: null,
+    stop: false,
   },
 
   extraReducers: (builder) => {
@@ -24,8 +24,9 @@ const ticketsSlice = createSlice({
       }
     });
 
-    builder.addCase(fetchTickets.rejected, (state) => {
+    builder.addCase(fetchTickets.rejected, (state,action) => {
       state.error = true;
+      state.stop = action.payload?.stop;
     });
   },
 });

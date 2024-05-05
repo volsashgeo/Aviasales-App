@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { appSelectors } from '../../store';
@@ -19,7 +19,7 @@ export default function Tickets() {
   const tabs = useSelector(appSelectors.tabs);
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!stop) {
       dispatch(fetchTickets())
     }

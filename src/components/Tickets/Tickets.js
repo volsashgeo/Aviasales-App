@@ -66,7 +66,7 @@ export default function Tickets() {
     .slice(0, addFiveTickets)
     .map((ticket) => <Ticket key={nextId++} {...ticket} />);
 
-  const renderList = sortedAndFilteredTicketsList.length ? (
+  const renderList = elems.length > 0 ? (
     <div className={classes.tickets}>
       {elems}
       <button className={classes.btn__next_tickets} onClick={() => setAddFiveTickets((s) => s + 5)}>
@@ -78,5 +78,6 @@ export default function Tickets() {
       <span>Рейсов, подходящих под заданные фильтры, не найдено</span>
     </div>
   );
+
   return <div>{renderList}</div>;
 }

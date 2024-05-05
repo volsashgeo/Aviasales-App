@@ -9,8 +9,9 @@ async function getSearchId() {
   return searchIdObj.searchId;
 }
 
+let ticketsObj = null;
+
 async function getTickets() {
-  let ticketsObj = null;
   try {
     if (!searchId) {
       searchId = await getSearchId();
@@ -19,13 +20,11 @@ async function getTickets() {
     const response = await fetch(url);
 
     if (!response.ok) {
-      if (Number(response.status) !== 500) {
-        throw new Error(`Could not fetch ${url}, received ${response.status}`);
-      }
+      throw new Error(`Could not fetch ${url}, received ${response.status}`);
     }
 
     ticketsObj = await response.json();
-  } catch (e) {
+  } catch (err) {
     getTickets();
   }
   return ticketsObj;
